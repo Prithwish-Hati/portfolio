@@ -1,27 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sora', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* To center social icons verically */
+.centered-y {
+  @apply absolute top-[50%] translate-y-[-50%]
+};
+
+/* For sections padding */
+.padding-x {
+  @apply sm:px-16 pr-6;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.nav__links-hover {
+  @apply hover:font-semibold hover:text-[#ff869e]
+}
+
+.hero {
+  @apply flex md:flex-row flex-col gap-0 relative z-0 max-w-[1440px] mx-auto;
+}
+
+.hero__title {
+  @apply mt-0 text-5xl font-extrabold  drop-shadow-2xl tracking-widest leading-snug md:text-6xl md:mt-3 md:drop-shadow-3xl md:leading-[100px];
+}
+
+.hero__subtitle {
+  @apply text-[#4B4B4B] font-extralight;
+}
+
+ .hero__section-overlay {
+  @apply bg-hero-bg absolute left-[250px] md:left-[420px] h-[1275px] w-[851px] bg-repeat-round top-[-210px] -z-10
 }
