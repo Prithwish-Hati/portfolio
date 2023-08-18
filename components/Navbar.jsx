@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full h-6 z-10 absolute">
-      <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4">
+      <nav className="max-w-[1440px] flex justify-between items-center sm:px-16 px-6 py-4">
         <Link href="/">
           <Image
             src="/logo.svg"

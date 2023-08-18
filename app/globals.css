@@ -17,8 +17,12 @@
 };
 
 /* For sections padding */
-.padding-x {
-  @apply sm:px-16 pr-6;
+.margin-x {
+  @apply mx-10 md:mx-[24px] lg:mx-32
+}
+
+.social__icons {
+  @apply flex flex-row gap-3 h-4 mt-3 md:h-14 lg:h-[70px] lg:flex-col lg:absolute lg:top-56 lg:left-10
 }
 
 .nav__links-hover {
@@ -26,17 +30,29 @@
 }
 
 .hero {
-  @apply flex md:flex-row flex-col gap-0 relative z-0 max-w-[1440px] mx-auto;
+  @apply max-w-[1440px] overflow-hidden
+}
+
+.hero__text-container {
+  @apply h-[100vh] mt-24 lg:mt-28
 }
 
 .hero__title {
-  @apply mt-0 text-5xl font-extrabold  drop-shadow-2xl tracking-widest leading-snug md:text-6xl md:mt-3 md:drop-shadow-3xl md:leading-[100px];
+  @apply font-extrabold text-4xl mt-2 tracking-widest leading-snug drop-shadow-3xl md:text-5xl md:leading-[70px] lg:leading-[100px] lg:text-7xl lg:mt-[2px];
 }
 
 .hero__subtitle {
-  @apply text-[#4B4B4B] font-extralight;
+  @apply text-[#4B4B4B] font-extralight text-base md:text-lg lg:text-xl;
+}
+
+.hero__button {
+  @apply bg-[#55CDFC] text-white rounded-lg text-base font-bold px-2 py-3 mt-8 md:text-xl lg:text-2xl md:mt-10
+}
+
+.hero__image {
+  @apply object-contain absolute top-28 -right-36 h-[455px] md:h-[550px] lg:h-[596px] lg:top-24 lg:-right-72
 }
 
  .hero__section-overlay {
-  @apply bg-hero-bg absolute left-[250px] md:left-[420px] h-[1275px] w-[851px] bg-repeat-round top-[-210px] -z-10
-}
+  @apply bg-hero-bg bg-no-repeat -z-10 absolute h-[595px] w-[660px] top-0 right-0 md:h-[690px] lg:h-[717px] lg:-right-60 lg:w-full
+ }
