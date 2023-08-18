@@ -15,7 +15,7 @@ const Hero = () => {
           DEVELOPER
         </h1>
 
-        <p className="hero__subtitle mt-4 md:mt-6 lg:mt-8">
+        <p className="hero__subtitle mt-4 md:mt-6 lg:mt-8 z-20">
           I build CRUD applications
           <br />
           with MERN stack and Next.js 13

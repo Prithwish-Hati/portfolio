@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
   font-family: 'Sora', sans-serif;
 }
 
@@ -30,11 +30,11 @@
 }
 
 .hero {
-  @apply max-w-[1440px] overflow-hidden
+  @apply max-w-[1440px] overflow-hidden h-[100%]
 }
 
 .hero__text-container {
-  @apply h-[100vh] mt-24 lg:mt-28
+  @apply h-[90vh] mt-24 lg:mt-28
 }
 
 .hero__title {
@@ -55,4 +55,31 @@
 
  .hero__section-overlay {
   @apply bg-hero-bg bg-no-repeat -z-10 absolute h-[595px] w-[660px] top-0 right-0 md:h-[690px] lg:h-[717px] lg:-right-60 lg:w-full
+ }
+
+ /* END OF HERO STYLES */
+
+ /* Start of PROJECT styles */
+ .project__counter {
+  @apply text-xl font-bold md:text-4xl lg:text-6xl;
+ }
+
+ .project__card-container {
+  @apply flex flex-col-reverse items-start justify-start gap-0 mt-3 md:mt-5 lg:mt-7 lg:flex-row lg:justify-stretch 
+ }
+
+ .project__card {
+  @apply p-3 rounded-b-lg rounded-tr-lg bg-gradient-to-l from-[#55CDFC] to-[#F3FCFF] md:p-5 lg:rounded-bl-lg lg:rounded-br-none lg:rounded-tl-lg lg:rounded-tr-none
+ }
+
+ .project__link-container {
+  @apply flex gap-1 text-sm font-medium mt-2 text-black md:text-base lg:mt-4 lg:font-semibold
+ }
+
+ .project__link {
+  @apply underline hover:font-semibold lg:hover:text-[#FF869E]
+ }
+
+ .project__card-image {
+  @apply rounded-t-lg border-solid border-[3px] border-b-0 border-[#55CDFC] h-36 w-52 md:h-72 md:w-[420px] lg:rounded-tr-lg lg:rounded-tl-none lg:rounded-br-lg lg:rounded-bl-none lg:h-[240px] lg:w-[364px] lg:max-h-[240px] lg:max-w-[364px] lg:border-b-[3px]
  }
