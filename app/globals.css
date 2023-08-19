@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 * {
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
   font-family: 'Sora', sans-serif;
 }
 
@@ -18,43 +18,81 @@
 
 /* For sections padding */
 .margin-x {
-  @apply mx-10 md:mx-[24px] lg:mx-32
+  @apply mx-10 lg:mx-32
 }
 
 .social__icons {
   @apply flex flex-row gap-3 h-4 mt-3 md:h-14 lg:h-[70px] lg:flex-col lg:absolute lg:top-56 lg:left-10
 }
 
-.nav__links-hover {
-  @apply hover:font-semibold hover:text-[#ff869e]
+
+/* Start of NAVBAR styles */
+.navbar {
+  @apply max-w-[1440px] w-full z-10 h-6 sticky top-0 pt-4
 }
 
+.navbar__menu-container {
+  @apply flex items-center justify-between
+}
+
+.navbar__links-hover {
+  @apply hover:font-semibold hover:text-[#FF6382]
+}
+
+.navbar__links-active {
+  @apply text-[#FF6382] font-semibold underline underline-offset-4
+}
+
+.pc__menu-item {
+  @apply list-none lg:flex hidden justify-end gap-7 text-lg
+}
+
+.mobile__menu {
+  @apply lg:hidden flex flex-1 justify-end items-center
+}
+ /* flex-1 allows a flex item to grow and shrink as needed, ignoring its initial size */
+
+.mobile__menu-container {
+  @apply  px-4 py-3 bg-sky-200 absolute top-10 my-5 right-0 mx-4 min-w-[140px] rounded-xl
+}
+
+.mobile__menu-item {
+  @apply list-none flex items-start flex-col gap-1
+}
+
+
+
+/* Start of HERO styles */
 .hero {
-  @apply max-w-[1440px] overflow-hidden h-[100%]
+  @apply max-w-[1440px] overflow-hidden max-h-screen lg:h-screen
 }
 
-.hero__text-container {
-  @apply h-[90vh] mt-24 lg:mt-28
+.hero__layout {
+  @apply block md:flex justify-between items-center
 }
+
+.hero__layout-mobile {
+  @apply flex justify-between items-start md:hidden
+ }
 
 .hero__title {
   @apply font-extrabold text-4xl mt-2 tracking-widest leading-snug drop-shadow-3xl md:text-5xl md:leading-[70px] lg:leading-[100px] lg:text-7xl lg:mt-[2px];
 }
 
 .hero__subtitle {
-  @apply text-[#4B4B4B] font-extralight text-base md:text-lg lg:text-xl;
+  @apply text-slate-600 font-normal text-base md:font-light md:text-xl lg:text-2xl;
 }
 
 .hero__button {
-  @apply bg-[#55CDFC] text-white rounded-lg text-base font-bold px-2 py-3 mt-8 md:text-xl lg:text-2xl md:mt-10
+  @apply bg-[#FF869E] text-white rounded-lg text-base font-bold px-2 py-3 mt-8 hover:bg-[#55CDFC] md:text-xl lg:text-2xl md:mt-10
 }
 
 .hero__image {
-  @apply object-contain absolute top-28 -right-36 h-[455px] md:h-[550px] lg:h-[596px] lg:top-24 lg:-right-72
+  @apply object-contain w-56 md:w-[400px] lg:w-[450px]
 }
 
  .hero__section-overlay {
-  @apply bg-hero-bg bg-no-repeat -z-10 absolute h-[595px] w-[660px] top-0 right-0 md:h-[690px] lg:h-[717px] lg:-right-60 lg:w-full
+  @apply absolute -z-10 top-0 left-16 h-[580px] w-full md:h-[643px] lg:left-10 lg:h-[713px]
  }
 
  /* END OF HERO STYLES */

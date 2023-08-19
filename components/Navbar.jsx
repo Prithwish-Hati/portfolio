@@ -12,29 +12,28 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="w-full h-6 z-10 absolute">
-      <nav className="max-w-[1440px] flex justify-between items-center sm:px-16 px-6 py-4">
+    <header className="navbar">
+      <nav className="navbar__menu-container margin-x">
         <Link href="/">
           <Image
             src="/logo.svg"
             alt="Prithwish Hati Logo"
             width={150}
             height={50}
-            className="object-contain"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="list-none lg:flex hidden justify-end gap-7 text-sm ">
+        <ul className="pc__menu-item">
           {navLinks.map((navLink) => (
             <Link
               key={navLink.key}
               href={navLink.href}
               onClick={() => setActive(navLink.text)} //Onclicking, the active state will be updated to the 'text' value of navLink
-              className={`nav__links-hover cursor-pointer 
+              className={`navbar__links-hover cursor-pointer 
                 ${
                   active === navLink.text
-                    ? "text-[#ff869e] font-semibold underline underline-offset-4" // active state styles
+                    ? "navbar__links-active"
                     : "text-black"
                 }`}
             >
@@ -43,11 +42,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-
         {/* Mobile Navigation */}
-
-        {/* flex-1 allows a flex item to grow and shrink as needed, ignoring its initial size */}
-        <div className="lg:hidden flex flex-1 justify-end items-center text-sm">
+        <div className="mobile__menu">
           <Image
             src={toggle ? "/close.svg" : "/menu.svg"}
             width={28}
@@ -58,21 +54,19 @@ const Navbar = () => {
           />
 
           <div
-            className={`${
-              toggle ? "flex" : "hidden"
-            } pr-8 pl-3 py-3 bg-sky-200 absolute top-8 right-0 mx-4 my-5 min-w-[140px] rounded-xl`}
+            className={`${toggle ? "flex" : "hidden"}  mobile__menu-container`}
           >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col">
+            <ul className="mobile__menu-item">
               {navLinks.map((navLink) => (
                 <Link
                   key={navLink.key}
                   href={navLink.href}
                   onClick={() => setActive(navLink.text)} //Onclicking, the active state will be updated to the 'text' value of navLink
-                  className={`nav__links-hover cursor-pointer 
+                  className={`navbar__links-hover cursor-pointer 
                 ${
                   active === navLink.text
-                    ? "text-[#ff869e] font-semibold underline underline-offset-4" // active state styles
-                    : "text-black"
+                    ? "navbar__links-active"
+                    : "text-slate-800"
                 }`}
                 >
                   {navLink.text}
