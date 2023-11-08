@@ -1,20 +1,19 @@
-import './globals.css';
-import { Footer, Navbar } from '@/components';
-
+import "./globals.css";
+import { Footer, Navbar } from "@/components";
 
 export const metadata = {
-  title: 'Dev Portfolio',
-  description: 'Prithwish Hati\'s Complete Developer Portfolio',
-}
+  title: "Dev Portfolio",
+  description: "Prithwish Hati's Complete Developer Portfolio",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='relative'>
-      <Navbar />
-        {children}
+      <body className="relative">
+        <Navbar />
+        <main>{children}</main>
         <Footer />
-        </body>
+      </body>
     </html>
-  )
+  );
 }

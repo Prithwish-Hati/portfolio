@@ -6,14 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { navLinks } from "@/constants";
+import classNames from "classnames";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="navbar">
-      <nav className="navbar__menu-container margin-x">
+    <header className="max-w-[1440px] w-full z-10  sticky top-0 py-4 bg-white">
+      <nav className="flex items-center justify-between margin-x">
         <Link href="/">
           <Image
             src="/logo.svg"
@@ -24,18 +25,18 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="pc__menu-item">
+        <ul className="list-none lg:flex hidden justify-end gap-7 text-lg ">
           {navLinks.map((navLink) => (
             <Link
               key={navLink.key}
               href={navLink.href}
               onClick={() => setActive(navLink.text)} //Onclicking, the active state will be updated to the 'text' value of navLink
-              className={`navbar__links-hover cursor-pointer 
-                ${
-                  active === navLink.text
-                    ? "navbar__links-active"
-                    : "text-black"
-                }`}
+              className={classNames({
+                "text-magenta underline underline-offset-4":
+                  active == navLink.text,
+                "text-black": active !== navLink.text,
+                " hover:text-magenta cursor-pointer transition-colors": true,
+              })}
             >
               {navLink.text}
             </Link>
@@ -54,20 +55,21 @@ const Navbar = () => {
           />
 
           <div
-            className={`${toggle ? "flex" : "hidden"}  mobile__menu-container`}
+            className={`${
+              toggle ? "flex" : "hidden"
+            } px-4 py-3 bg-sky-200 absolute top-10 my-5 right-0 mx-4 min-w-[140px] rounded-xl`}
           >
-            <ul className="mobile__menu-item">
+            <ul className="list-none flex items-start flex-col gap-1">
               {navLinks.map((navLink) => (
                 <Link
                   key={navLink.key}
                   href={navLink.href}
                   onClick={() => setActive(navLink.text)} //Onclicking, the active state will be updated to the 'text' value of navLink
-                  className={`navbar__links-hover cursor-pointer 
-                ${
-                  active === navLink.text
-                    ? "navbar__links-active"
-                    : "text-slate-800"
-                }`}
+                  className={classNames({
+                    "text-magenta font-medium": active == navLink.text,
+                    "text-slate-800": active !== navLink.text,
+                    "hover:text-magenta cursor-pointer transition-colors": true,
+                  })}
                 >
                   {navLink.text}
                 </Link>

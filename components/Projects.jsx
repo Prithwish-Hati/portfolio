@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <section className="margin-x">
+    <section 
+    id="projects"
+    className="margin-x py-10">
+      <h1 className="text-xl font-bold md:text-4xl lg:text-6xl text-center">Projects</h1>
       {/* PROJECT 1 */}
       <div>
         <span className="project__counter">01</span>

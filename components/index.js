@@ -2,8 +2,8 @@ import About from "./About";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
-import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+import Skills from "./Skills";
 
 
 export {
@@ -11,7 +11,6 @@ export {
     Hero,
     Navbar,
     Projects,
-    Testimonials,
     Footer,
-    
+    Skills,
 }
